@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="UWPBFIDE.Views.MainF"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWPBFIDE.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Transparent">
+        <ScrollViewer>
+            <StackPanel>
+                <TextBox x:Name="textBox" TextWrapping="Wrap" PlaceholderText="Code here" VerticalAlignment="Top" Height="358"/>
+                <TextBox x:Name="inp" TextWrapping="Wrap" PlaceholderText="input" VerticalAlignment="Top" Height="58"/>
+                <Button HorizontalAlignment="Center" Content="Compile" Click="Button_Click" />
+                <TextBox x:Name="outp" TextWrapping="Wrap" PlaceholderText="output" VerticalAlignment="Top" Height="58"/>
+            </StackPanel>
+        </ScrollViewer>
+        
+    </Grid>
+</Page>
