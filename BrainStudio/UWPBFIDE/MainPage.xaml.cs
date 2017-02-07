@@ -8,6 +8,7 @@ using UWPBFIDE.Views;
 using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Foundation.Metadata;
 using Windows.UI;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
@@ -33,8 +34,15 @@ namespace UWPBFIDE
             this.InitializeComponent();
             Loaded += MainPage_Loaded;
         }
-        private void MainPage_Loaded(object sender, RoutedEventArgs e)
+        private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+            if (ApiInformation.IsApiContractPresent("Windows.Phone.PhoneContract", 1, 0))
+            {
+                var statusBar = StatusBar.GetForCurrentView();
+                await statusBar.HideAsync();
+                tooler.Margin = new Thickness(0, 7, 20, 0);
+            }
+
             // tanzime title bar
             CoreApplicationViewTitleBar coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
             coreTitleBar.ExtendViewIntoTitleBar = true;

@@ -9,7 +9,7 @@
 
     <Grid Background="Transparent">
         <ScrollViewer>
-            <StackPanel Margin="30" >
+            <StackPanel Margin="32" >
                 <TextBox  x:Name="textBox"  PlaceholderText="Code here"  Height="300" Style="{StaticResource Coremestyle}"/>
 
                 <Pivot>

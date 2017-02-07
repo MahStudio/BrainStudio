@@ -28,7 +28,7 @@
 
             
 
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center"  Margin="0,0,20,0" Grid.Column ="1">
+            <StackPanel x:Name="tooler" Orientation="Horizontal" VerticalAlignment="Center"  Margin="0,0,20,0" Grid.Column ="1">
                 <Button Content="" Style="{StaticResource Toolbutton}"  />
                 <Button Content="" Style="{StaticResource Toolbutton}"  />
                 <Button Content="" x:Name="run" Click="run_Click" Style="{StaticResource Toolbutton}"  />
@@ -52,7 +52,7 @@
                     <Grid Background="{StaticResource SystemControlBackgroundAccentBrush}" Opacity="0.05" />
                     <!--<controls:BackDrop x:Name="Pashmz"  BlurAmount="11" />-->
                     <StackPanel >
-                        <TextBlock Margin="73,15,0,0" FontSize="17" Text="Brain Studio"  />
+                        <TextBlock Margin="73,13,0,0" FontSize="17" Text="Brain Studio"  />
                         <StackPanel Margin="20,25,0,0"  Orientation="Vertical" >
                             <Button  Style="{StaticResource Hambergutbut}" >
                                 
@@ -129,7 +129,7 @@
         </SplitView>
         
         <Button Foreground="Black" x:Name="menubutton" Click="menubutton_Click" Style="{StaticResource SplitViewTogglePaneButtonStyle}"
-         AutomationProperties.Name="Menu" Height="48" Width="48" ToolTipService.ToolTip="Menu" VerticalAlignment="Top" Margin="20,0,0,0"  />
+         AutomationProperties.Name="Menu" Height="48" Width="48" ToolTipService.ToolTip="Menu" VerticalAlignment="Top" Margin="18,0,0,0"  />
         </Grid>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
