@@ -78,6 +78,15 @@ namespace UWPBFIDE
                 Window.Current.Activate();
             }
         }
+        protected override void OnFileActivated(FileActivatedEventArgs args)
+        {
+            base.OnFileActivated(args);
+            Frame rootFrame = new Frame();
+            rootFrame.Navigate(typeof(MainPage), args);
+            Window.Current.Content = rootFrame;
+            // Ensure the current window is active
+            Window.Current.Activate();
+        }
 
         /// <summary>
         /// Invoked when Navigation to a certain page fails
@@ -91,6 +100,7 @@ namespace UWPBFIDE
         protected override void OnWindowCreated(WindowCreatedEventArgs args)
         {
             base.OnWindowCreated(args);
+            
             
         }
         /// <summary>
