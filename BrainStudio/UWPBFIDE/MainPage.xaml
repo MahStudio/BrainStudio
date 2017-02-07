@@ -9,27 +9,37 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-                <VisualState>
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="1080" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="RootSplitView.DisplayMode" Value="Inline"/>
-                        <Setter Target="RootSplitView.IsPaneOpen" Value="true"/>
-                    </VisualState.Setters>
-                </VisualState>
-                <VisualState>
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="0" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="RootSplitView.DisplayMode" Value="Overlay"/>
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid  Grid.RowSpan="2" Background="{StaticResource SystemControlBackgroundAccentBrush}" Opacity="0.02" />
+        <Grid Grid.Row="0"
+              x:Name="TitleBar">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Rectangle x:Name="BackgroundElement"
+                       Fill="Transparent"
+                       Grid.ColumnSpan="4"/>
+
+            
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center"  Margin="0,0,20,0" Grid.Column ="1">
+                <Button Content="" Style="{StaticResource Toolbutton}"  />
+                <Button Content="" Style="{StaticResource Toolbutton}"  />
+                <Button Content="" x:Name="run" Click="run_Click" Style="{StaticResource Toolbutton}"  />
+            </StackPanel>
+
+            <Grid Grid.Column="3"
+                  x:Name="RightMask" />
+
+        </Grid>
+        <Grid Grid.RowSpan="3">
+        
         
         <SplitView Grid.Row="1" x:Name="RootSplitView"
                    DisplayMode="Inline"
@@ -40,7 +50,7 @@
                 <Grid>
                     
                     <Grid Background="{StaticResource SystemControlBackgroundAccentBrush}" Opacity="0.05" />
-                    <!--<controls:BackDrop x:Name="Pashmz"  BlurAmount="15" />-->
+                    <!--<controls:BackDrop x:Name="Pashmz"  BlurAmount="11" />-->
                     <StackPanel >
                         <TextBlock Margin="73,15,0,0" FontSize="17" Text="Brain Studio"  />
                         <StackPanel Margin="20,25,0,0"  Orientation="Vertical" >
@@ -105,38 +115,42 @@
             
         
        
-            <Grid >
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="40" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <Grid Background="White" Grid.Row="0" x:Name="TitleBar" Margin="70,0,0,0">
-                        
-                        
-                            <Button Visibility="Collapsed" x:Name="BackButton"  />
-                        
-                        <Grid Grid.Column="1" x:Name="MainTitleBar" Background="Transparent">
-                            <TextBlock Visibility="Collapsed" Text="UrzaGatherer" VerticalAlignment="Center" 
-FontSize="12" FontFamily="Segoe UI" FontWeight="Normal" Margin="10,0"></TextBlock>
-                            
-                        </Grid>
+           
+                <Grid Margin="0,50,0,0">
+                   
+                    
 
-                    </Grid>
-                    <StackPanel Margin="80,0,0,0" Grid.Row="0" Orientation="Horizontal" >
-                        <Button Content="" Style="{StaticResource Toolbutton}"  />
-                    </StackPanel>
-
-                    <Grid  Grid.RowSpan="2" Background="{StaticResource SystemControlBackgroundAccentBrush}" Opacity="0.02" />
-                    <Frame Grid.Row="1" x:Name="frameme" />
+                    
+                    <Frame  x:Name="frameme" />
 
                 </Grid>
                
-            </Grid>
+            
         </SplitView>
         
         <Button Foreground="Black" x:Name="menubutton" Click="menubutton_Click" Style="{StaticResource SplitViewTogglePaneButtonStyle}"
          AutomationProperties.Name="Menu" Height="48" Width="48" ToolTipService.ToolTip="Menu" VerticalAlignment="Top" Margin="20,0,0,0"  />
-        
+        </Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1080" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="RootSplitView.DisplayMode" Value="Inline"/>
+                        <Setter Target="RootSplitView.IsPaneOpen" Value="true"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="RootSplitView.DisplayMode" Value="Overlay"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
     </Grid>
 </Page>

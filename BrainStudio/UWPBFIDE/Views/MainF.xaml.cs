@@ -32,8 +32,8 @@ namespace UWPBFIDE.Views
         private int ptr { get; set; }
 
         private bool echo { get; set; }
+        public static MainF Current;
         public void BrainFuckInterpreter()
-
         {
 
             this.ptr = 0;
@@ -52,6 +52,7 @@ namespace UWPBFIDE.Views
         public MainF()
         {
             this.InitializeComponent();
+            Current = this;
         }
         public void Interpret(string s)
 
@@ -242,10 +243,13 @@ namespace UWPBFIDE.Views
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public  void runer()
         {
             Interpret(textBox.Text);
+
         }
+            
+        
     }
 }
 

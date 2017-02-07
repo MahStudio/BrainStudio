@@ -9,11 +9,28 @@
 
     <Grid Background="Transparent">
         <ScrollViewer>
-            <StackPanel>
-                <TextBox x:Name="textBox" TextWrapping="Wrap" PlaceholderText="Code here" VerticalAlignment="Top" Height="358"/>
-                <TextBox x:Name="inp" TextWrapping="Wrap" PlaceholderText="input" VerticalAlignment="Top" Height="58"/>
-                <Button HorizontalAlignment="Center" Content="Compile" Click="Button_Click" />
-                <TextBox x:Name="outp" TextWrapping="Wrap" PlaceholderText="output" VerticalAlignment="Top" Height="58"/>
+            <StackPanel Margin="30" >
+                <TextBox  x:Name="textBox"  PlaceholderText="Code here"  Height="300" Style="{StaticResource Coremestyle}"/>
+
+                <Pivot>
+
+
+
+
+                    
+
+                    <PivotItem Header="Output" >
+                       
+                        <TextBox  Style="{StaticResource Coremestyle}" x:Name="outp"  PlaceholderText="output" Height="58"/>
+                    </PivotItem>
+
+                    <PivotItem Header="Input">
+                        <TextBox  Style="{StaticResource Coremestyle}" x:Name="inp" PlaceholderText="input"  Height="58"/>
+                    </PivotItem>
+                </Pivot>
+                
+                
+                
             </StackPanel>
         </ScrollViewer>
         
