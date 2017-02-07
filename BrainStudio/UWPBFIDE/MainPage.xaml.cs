@@ -75,10 +75,11 @@ namespace UWPBFIDE
             else
                 RightMask.Width = sender.SystemOverlayLeftInset;
         }
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
-            frameme.Navigate(typeof(MainF));
             base.OnNavigatedTo(e);
+            frameme.Navigate(typeof(MainF));
+
             if (frameme.CanGoBack)
             {
                 Back.Visibility = Visibility.Visible;
@@ -86,6 +87,23 @@ namespace UWPBFIDE
             else
             {
                 Back.Visibility = Visibility.Collapsed;
+            }
+            var args = e.Parameter as Windows.ApplicationModel.Activation.IActivatedEventArgs;
+            if (args != null)
+            {
+                if (args.Kind == Windows.ApplicationModel.Activation.ActivationKind.File)
+                {
+                    frameme.Navigate(typeof(MainF));
+                    var fileArgs = args as Windows.ApplicationModel.Activation.FileActivatedEventArgs;
+                    string strFilePath = fileArgs.Files[0].Path;
+                    var file = (StorageFile)fileArgs.Files[0];
+                    MainF.Current.cleaner();
+
+                    MainF.Current.textBox.Text = await FileIO.ReadTextAsync(file);
+                    MainF.Current.title.Text = file.Name;
+
+
+                }
             }
 
         }
@@ -189,13 +207,7 @@ namespace UWPBFIDE
                 MainF.Current.textBox.Text = await FileIO.ReadTextAsync(file);
                 MainF.Current.title.Text = file.Name;
                 
-                ContentDialog noWifiDialog = new ContentDialog()
-                {
-                    Title = "Success!",
-                    Content = "Backup had been restored.",
-                    PrimaryButtonText = "Nice!"
-                };
-                await noWifiDialog.ShowAsync();
+                
                
 
 
