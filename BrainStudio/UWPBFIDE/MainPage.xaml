@@ -74,7 +74,7 @@
 
 
                             </Button>
-                            <Button Margin="0,20,0,0" Style="{StaticResource Hambergutbut}" >
+                            <Button x:Name="save" Click="save_Click"  Margin="0,20,0,0" Style="{StaticResource Hambergutbut}" >
 
                                 <StackPanel Width="300" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Orientation="Horizontal">
                                     <TextBlock  Text="" Style="{StaticResource Glypher}"    />

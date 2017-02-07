@@ -120,6 +120,57 @@ namespace UWPBFIDE
         {
             frameme.Navigate(typeof(fAbout));
         }
+
+        private async void save_Click(object sender, RoutedEventArgs e)
+        {
+            var savePicker = new Windows.Storage.Pickers.FileSavePicker();
+            savePicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
+            // Dropdown of file types the user can save the file as
+            savePicker.FileTypeChoices.Add("Brain Fuck File", new List<string>() { ".bf" });
+            // Default file name if the user does not type one in or select a file to replace
+            savePicker.SuggestedFileName = "BrainProject";
+            Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
+            if (file != null)
+            {
+                Windows.Storage.CachedFileManager.DeferUpdates(file);
+                Windows.Storage.CachedFileManager.DeferUpdates(file);
+                await Windows.Storage.FileIO.WriteTextAsync(file, MainF.Current.textBox.Text);
+                Windows.Storage.Provider.FileUpdateStatus status =
+           await Windows.Storage.CachedFileManager.CompleteUpdatesAsync(file);
+                if (status == Windows.Storage.Provider.FileUpdateStatus.Complete)
+                {
+                    ContentDialog noWifiDialog = new ContentDialog()
+                    {
+                        Title = "Success!",
+                        Content = "Backup had been saved .",
+                        PrimaryButtonText = "Nice!"
+                    };
+                    noWifiDialog.ShowAsync();
+                }
+                else
+                {
+                    ContentDialog noWifiDialog = new ContentDialog()
+                    {
+                        Title = ":(",
+                        Content = "Something went wrong",
+                        PrimaryButtonText = "OK"
+                    };
+                    noWifiDialog.ShowAsync();
+                }
+
+            }
+            else
+            {
+                ContentDialog noWifiDialog = new ContentDialog()
+                {
+                    Title = ":/",
+                    Content = "Operation canceled",
+                    PrimaryButtonText = "OK"
+                };
+                noWifiDialog.ShowAsync();
+            }
+
+        }
     }
 
 }

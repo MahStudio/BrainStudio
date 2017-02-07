@@ -11,7 +11,7 @@
         <ScrollViewer>
             <StackPanel Margin="32" >
                 <TextBlock Text="BRAINFUCK.NAME" FontSize="20" FontWeight="SemiBold" Margin="0,15" />
-                <TextBox  x:Name="textBox"  PlaceholderText="Code here"  Height="300" Style="{StaticResource Coremestyle}"/>
+                <TextBox x:FieldModifier="public" x:Name="textBox"  PlaceholderText="Code here"  Height="300" Style="{StaticResource Coremestyle}"/>
 
                 <Pivot>
 
