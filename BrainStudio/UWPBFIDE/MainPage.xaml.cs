@@ -29,10 +29,12 @@ namespace UWPBFIDE
     public sealed partial class MainPage : Page
     {
         private ApplicationViewTitleBar titleBar;
+        public static MainPage Current; 
         public MainPage()
         {
             this.InitializeComponent();
             Loaded += MainPage_Loaded;
+            Current = this;
         }
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
@@ -75,7 +77,15 @@ namespace UWPBFIDE
         {
             frameme.Navigate(typeof(MainF));
             base.OnNavigatedTo(e);
-            
+            if (frameme.CanGoBack)
+            {
+                Back.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Back.Visibility = Visibility.Collapsed;
+            }
+
         }
         private void menubutton_Click(object sender, RoutedEventArgs e)
         {
@@ -85,6 +95,30 @@ namespace UWPBFIDE
         private void run_Click(object sender, RoutedEventArgs e)
         {
             MainF.Current.runer();
+        }
+
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            if (frameme.CanGoBack)
+                frameme.GoBack();
+            if (frameme.CanGoBack)
+            {
+                Back.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Back.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void about_Click(object sender, RoutedEventArgs e)
+        {
+            frameme.Navigate(typeof(fAbout));
         }
     }
 

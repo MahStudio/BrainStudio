@@ -29,8 +29,8 @@
             
 
             <StackPanel x:Name="tooler" Orientation="Horizontal" VerticalAlignment="Center"  Margin="0,0,20,0" Grid.Column ="1">
-                <Button Content="" Style="{StaticResource Toolbutton}"  />
-                <Button Content="" Style="{StaticResource Toolbutton}"  />
+                <Button x:FieldModifier="public" Content="" x:Name="Back" Click="Back_Click" Style="{StaticResource Toolbutton}"  />
+                <Button Content="" x:Name="Clear" Click="Clear_Click" Style="{StaticResource Toolbutton}"  />
                 <Button Content="" x:Name="run" Click="run_Click" Style="{StaticResource Toolbutton}"  />
             </StackPanel>
 
@@ -95,7 +95,7 @@
 
 
                             </Button>
-                            <Button Margin="0,20,0,0" Style="{StaticResource Hambergutbut}" >
+                            <Button x:Name="about" Click="about_Click" Margin="0,20,0,0" Style="{StaticResource Hambergutbut}" >
 
                                 <StackPanel Width="300" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Orientation="Horizontal">
                                     <TextBlock  Text="" Style="{StaticResource Glypher}"    />
@@ -121,7 +121,7 @@
                     
 
                     
-                    <Frame  x:Name="frameme" />
+                    <Frame x:FieldModifier="public" x:Name="frameme" />
 
                 </Grid>
                
