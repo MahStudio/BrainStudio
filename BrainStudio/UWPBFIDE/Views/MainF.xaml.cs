@@ -248,8 +248,15 @@ namespace UWPBFIDE.Views
             Interpret(textBox.Text);
 
         }
-            
-        
+        public void cleaner()
+        {
+            textBox.Text = string.Empty;
+            inp.Text = String.Empty;
+            outp.Text = String.Empty;
+
+        }
+
+
     }
 }
 

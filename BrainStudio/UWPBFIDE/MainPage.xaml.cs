@@ -99,7 +99,7 @@ namespace UWPBFIDE
 
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
-
+            MainF.Current.cleaner();
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
