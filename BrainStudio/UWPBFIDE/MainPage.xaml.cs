@@ -9,6 +9,8 @@ using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Foundation.Metadata;
+using Windows.Storage;
+using Windows.Storage.Pickers;
 using Windows.UI;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
@@ -170,6 +172,35 @@ namespace UWPBFIDE
                 noWifiDialog.ShowAsync();
             }
 
+        }
+
+        private async void open_Click(object sender, RoutedEventArgs e)
+        {
+            FileOpenPicker openPicker = new FileOpenPicker();
+            openPicker.ViewMode = PickerViewMode.Thumbnail;
+            openPicker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
+            openPicker.FileTypeFilter.Add(".bf");
+            IStorageFile file = await openPicker.PickSingleFileAsync();
+            if (file != null)
+            {
+
+                MainF.Current.cleaner();
+
+                MainF.Current.textBox.Text = await FileIO.ReadTextAsync(file);
+                MainF.Current.title.Text = file.Name;
+                
+                ContentDialog noWifiDialog = new ContentDialog()
+                {
+                    Title = "Success!",
+                    Content = "Backup had been restored.",
+                    PrimaryButtonText = "Nice!"
+                };
+                await noWifiDialog.ShowAsync();
+               
+
+
+
+            }
         }
     }
 

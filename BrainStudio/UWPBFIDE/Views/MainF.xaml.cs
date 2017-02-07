@@ -33,6 +33,16 @@ namespace UWPBFIDE.Views
 
         private bool echo { get; set; }
         public static MainF Current;
+        public MainF()
+        {
+            this.InitializeComponent();
+            Current = this;
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            
+        }
         public void BrainFuckInterpreter()
         {
 
@@ -49,11 +59,7 @@ namespace UWPBFIDE.Views
 
         }
 
-        public MainF()
-        {
-            this.InitializeComponent();
-            Current = this;
-        }
+       
         public void Interpret(string s)
 
         {
@@ -250,6 +256,7 @@ namespace UWPBFIDE.Views
         }
         public void cleaner()
         {
+            title.Text = string.Empty;
             textBox.Text = string.Empty;
             inp.Text = String.Empty;
             outp.Text = String.Empty;
