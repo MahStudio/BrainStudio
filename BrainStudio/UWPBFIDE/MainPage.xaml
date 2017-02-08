@@ -127,8 +127,8 @@
                
             
         </SplitView>
-        
-        <Button Foreground="Black" x:Name="menubutton" Click="menubutton_Click" Style="{StaticResource SplitViewTogglePaneButtonStyle}"
+
+            <Button x:Name="menubutton" Click="menubutton_Click" Style="{StaticResource SplitViewTogglePaneButtonStyle}"
          AutomationProperties.Name="Menu" Height="48" Width="48" ToolTipService.ToolTip="Menu" VerticalAlignment="Top" Margin="18,0,0,0"  />
         </Grid>
         <VisualStateManager.VisualStateGroups>
