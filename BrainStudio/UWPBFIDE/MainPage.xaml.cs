@@ -139,6 +139,7 @@ namespace UWPBFIDE
         private void about_Click(object sender, RoutedEventArgs e)
         {
             frameme.Navigate(typeof(fAbout));
+            RootSplitView.IsPaneOpen = !RootSplitView.IsPaneOpen;
         }
 
         private async void save_Click(object sender, RoutedEventArgs e)
@@ -189,6 +190,7 @@ namespace UWPBFIDE
                 };
                 noWifiDialog.ShowAsync();
             }
+            RootSplitView.IsPaneOpen = !RootSplitView.IsPaneOpen;
 
         }
 
@@ -206,7 +208,7 @@ namespace UWPBFIDE
 
                 MainF.Current.textBox.Text = await FileIO.ReadTextAsync(file);
                 MainF.Current.title.Text = file.Name;
-                
+                RootSplitView.IsPaneOpen =! RootSplitView.IsPaneOpen;
                 
                
 
