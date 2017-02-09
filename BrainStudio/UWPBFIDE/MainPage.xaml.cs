@@ -58,10 +58,12 @@ namespace UWPBFIDE
             // tagheire range dokmehaye title bar (dokmehaye exit, minimize, maximum)
             titleBar = ApplicationView.GetForCurrentView().TitleBar;
             titleBar.BackgroundColor = Colors.Transparent;
-            titleBar.ForegroundColor = new Color { A = 150, R = 0, G = 0, B = 0 };
-            //((Color)Application.Current.Resources["SystemControlForegroundBaseHighBrush"]);
+            SolidColorBrush a =(SolidColorBrush) Application.Current.Resources["AntiForeground"];
+            
+            titleBar.ForegroundColor = a.Color;
+            //
             titleBar.ButtonBackgroundColor = Colors.Transparent;
-            titleBar.ButtonForegroundColor = new Color { A = 150, R = 0, G = 0, B = 0 };
+            titleBar.ButtonForegroundColor = a.Color;
         }
 
         void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar titleBar, object args)
