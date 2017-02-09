@@ -23,6 +23,7 @@ namespace UWPBFIDE.Views
     /// </summary>
     public sealed partial class MainF : Page
     {
+        private static bool isopen = false;
         private static string VER = "0.0.0.1";
 
         private static readonly int BUFSIZE = 65535;
@@ -263,7 +264,32 @@ namespace UWPBFIDE.Views
 
         }
 
+        private void sandh_Click(object sender, RoutedEventArgs e)
+        {
+            if (isopen == false)
+            {
+                rotate.Begin();
+                tools.Visibility = Visibility.Visible;
+                isopen = true;
 
+            }
+            else
+            {
+                unrotate.Begin();
+                tools.Visibility = Visibility.Collapsed;
+                isopen = false;
+            }
+        }
+
+        private void convert_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            acci.Text = "";
+            var a = convert.Text.ToCharArray();
+            foreach (var item in a)
+            {
+                acci.Text += ((int)Convert.ToChar(item)).ToString() + "   ";
+            }
+        }
     }
 }
 
