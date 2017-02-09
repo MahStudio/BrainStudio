@@ -233,10 +233,8 @@ namespace UWPBFIDE.Views
 
                             // read a key
 
-                            string key = inp.Text;
-                            byte[] b = Encoding.ASCII.GetBytes(key);
-                            string x = b.ToString();
-                            this.buf[this.ptr] = int.Parse(x);
+                            string key = inp.Text; 
+                            this.buf[this.ptr] = (int)Convert.ToChar(key);
 
                             break;
 
