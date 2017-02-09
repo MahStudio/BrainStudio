@@ -6,8 +6,104 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+                    <Style x:Key="WikiSedaIcon" TargetType="Image">
+                        <Setter Property="Source" Value="/Assets/Square150x150Logo.scale-200.png"/>
+                    </Style>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <Style x:Key="WikiSedaIcon" TargetType="Image">
+                        <Setter Property="Source" Value="/Assets/Square150x150Logo.scale-200.png"/>
+                    </Style>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <RelativePanel Background="Transparent">
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <StackPanel x:Name="LogoGrid">
+                    <Grid>
+                        <Image Style="{StaticResource WikiSedaIcon}" Stretch="Uniform" MaxHeight="110"/>
+                    </Grid>
+                    <Grid x:Name="AppInfo">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Opacity="0.75" x:Name="ApplicationName" Grid.Row="0" Text="Brain Studio" FontWeight="SemiBold"/>
+                        <TextBlock Opacity="0.75" x:Name="ApplicationVersion" Grid.Row="1" Text="V 10.0.10.323" FontWeight="SemiBold"/>
+                    </Grid>
+                </StackPanel>
 
-    </Grid>
+                <StackPanel x:Name="AboutTextGrid" RelativePanel.Below="LogoGrid" RelativePanel.AlignHorizontalCenterWithPanel="True">
+                    <TextBlock Opacity="0.75" x:Uid="PageAboutLongText" TextWrapping="Wrap" TextAlignment="Center" Padding="15">
+                        Brain Studio is an Integraded Development Environment for the BrainFuck programming langulage in Windows Universal Platform.
+                        <LineBreak />
+                        <LineBreak />
+                        WHAT IS BRAINFUCK ?
+                        <LineBreak />
+                        BrainFuck is a low level programming language that consists of ONLY 8 simple commands. 
+                        <LineBreak />
+                        BrainFuck is a nice programming language to defrost your brain because it's eay to learn but hard to master !
+                        
+                    </TextBlock>
+                    <TextBlock Opacity="0.75" x:Uid="PageAboutWikiTalki" TextAlignment="Center" Text="EVERYONE CAN LEARN BRAINFUCK IN A DAY!" Padding="15"/>
+                </StackPanel>
+
+                <Grid RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Height="45" VerticalAlignment="Top" Margin="0,20,0,0">
+                    <Grid.ColumnDefinitions>
+                       
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Button Opacity="0.9" Grid.Column="0" Content="TELEGRAM" FontWeight="Bold" FontSize="15" HorizontalAlignment="Center" Click="TelegramChannel" AutomationProperties.Name="Visit our telegram page" Background="Transparent"/>
+                    <Button Opacity="0.9" Grid.Column="1" Content="INSTAGRAM" FontWeight="Bold" FontSize="15" HorizontalAlignment="Center" Click="InstaPage" AutomationProperties.Name="Visit our Instagram page" Background="Transparent"/>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+        <StackPanel Background="Transparent" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Padding="0,0,0,20">
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button x:Name="share" Click="share_Click" Content="SHARE" FontWeight="SemiBold" Foreground="#00bff3" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" />
+                <Button x:Name="rate" Click="rate_Click" Content="RATE THIS APP" FontWeight="SemiBold" Foreground="#00bff3" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" />
+                <Button x:Name="fback" Click="fback_Click" Content="FEEDBACK" FontWeight="SemiBold" Foreground="#00bff3" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" />
+
+            </StackPanel>
+
+            <TextBlock FontFamily="Segoe UI Emoji" TextAlignment="Center" Text="DEVELOPED WITH ❤️ BY MAH STUDIO" FontWeight="SemiBold"/>
+            <!--<TextBlock TextAlignment="Center" Text="CopyRight 2016 Wikiseda"/>-->
+        </StackPanel>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="WindowStates">
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="LogoGrid.HorizontalAlignment" Value="Center" />
+                        <Setter Target="LogoGrid.(RelativePanel.AlignHorizontalCenterWithPanel)" Value="True" />
+                        <Setter Target="AppInfo.(RelativePanel.RightOf)" Value="LogoGrid"/>
+                        <Setter Target="AppInfo.VerticalAlignment" Value="Center"/>
+                        <Setter Target="LogoGrid.Orientation" Value="Horizontal"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="LogoGrid.(RelativePanel.AlignHorizontalCenterWithPanel)" Value="True" />
+                        <Setter Target="ApplicationName.TextAlignment" Value="Center"/>
+                        <Setter Target="LogoGrid.Orientation" Value="Vertical"/>
+                        <Setter Target="ApplicationVersion.TextAlignment" Value="Center"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </RelativePanel>
 </Page>

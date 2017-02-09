@@ -19,7 +19,7 @@
     <PackageCertificateKeyFile>UWPBFIDE_StoreKey.pfx</PackageCertificateKeyFile>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
-    <AppxBundlePlatforms>arm</AppxBundlePlatforms>
+    <AppxBundlePlatforms>x86|arm</AppxBundlePlatforms>
     <PackageCertificateThumbprint>F904CF9947F9B07628C6207D834B4B324E1FB73B</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
@@ -165,6 +165,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <SDKReference Include="Microsoft.Services.Store.Engagement, Version=10.0">
+      <Name>Microsoft Engagement Framework</Name>
+    </SDKReference>
+    <SDKReference Include="Microsoft.VCLibs, Version=14.0">
+      <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
+    </SDKReference>
     <SDKReference Include="WindowsMobile, Version=10.0.10586.0">
       <Name>Windows Mobile Extensions for the UWP</Name>
     </SDKReference>
