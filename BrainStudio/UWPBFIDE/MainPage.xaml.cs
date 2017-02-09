@@ -149,7 +149,7 @@ namespace UWPBFIDE
             var savePicker = new Windows.Storage.Pickers.FileSavePicker();
             savePicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
             // Dropdown of file types the user can save the file as
-            savePicker.FileTypeChoices.Add("Brain Fuck File", new List<string>() { ".bf" });
+            savePicker.FileTypeChoices.Add("Brain Fuck File", new List<string>() { ".bf" , ".b" });
             // Default file name if the user does not type one in or select a file to replace
             savePicker.SuggestedFileName = MainF.Current.title.Text;
             Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
@@ -202,6 +202,7 @@ namespace UWPBFIDE
             openPicker.ViewMode = PickerViewMode.Thumbnail;
             openPicker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
             openPicker.FileTypeFilter.Add(".bf");
+            openPicker.FileTypeFilter.Add(".b");
             IStorageFile file = await openPicker.PickSingleFileAsync();
             if (file != null)
             {

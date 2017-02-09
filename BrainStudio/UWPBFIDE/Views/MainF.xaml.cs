@@ -250,7 +250,7 @@ namespace UWPBFIDE.Views
 
         public  void runer()
         {
-            Interpret(textBox.Text);
+            Interpret(">"+textBox.Text);
 
         }
         public void cleaner()
