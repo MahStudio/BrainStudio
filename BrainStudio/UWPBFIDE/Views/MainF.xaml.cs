@@ -290,6 +290,12 @@ namespace UWPBFIDE.Views
                 acci.Text += ((int)Convert.ToChar(item)).ToString() + "   ";
             }
         }
+
+        private void doneedit_Click(object sender, RoutedEventArgs e)
+        {
+            if (editbox.Text != "")
+                title.Text = editbox.Text;
+        }
     }
 }
 

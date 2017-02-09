@@ -25,7 +25,28 @@
     <Grid Background="Transparent">
         <ScrollViewer>
             <StackPanel Margin="32" >
-                <TextBlock x:Name="title" x:FieldModifier="public" Text="NEW ACTIVITY" FontSize="20" FontWeight="SemiBold" Margin="0,15" />
+                <Grid  Margin="0,15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="129*"/>
+                        <ColumnDefinition Width="20*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="title" x:FieldModifier="public" Text="NEW ACTIVITY" FontSize="20" FontWeight="SemiBold" Grid.Column="0" />
+                    <Button VerticalAlignment="Center" BorderThickness="0,0,0,2" HorizontalAlignment="Center" Content="" FontFamily="Segoe MDL2 Assets" Style="{StaticResource Hambergutbut}" Grid.Column="1" >
+                        <Button.Flyout>
+                            <Flyout >
+                                <Grid Width="270">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="121*"/>
+                                        <ColumnDefinition Width="25*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox x:Name="editbox" PlaceholderText="New name" Style="{StaticResource Coremestyle}" />
+                                    <Button x:Name="doneedit" Click="doneedit_Click" VerticalAlignment="Center" BorderThickness="0,0,0,2" HorizontalAlignment="Center" Content="" FontFamily="Segoe MDL2 Assets" Style="{StaticResource Hambergutbut}" Grid.Column="1" />
+                                </Grid>
+                            </Flyout>
+                        </Button.Flyout>
+                    </Button>
+                </Grid>
+
                 <TextBox x:FieldModifier="public" x:Name="textBox"  PlaceholderText="Code here"  Height="300" Style="{StaticResource Coremestyle}"/>
 
                 <Pivot>
@@ -33,10 +54,10 @@
 
 
 
-                    
+
 
                     <PivotItem Header="Output" >
-                       
+
                         <TextBox  Style="{StaticResource Coremestyle}" x:Name="outp"  PlaceholderText="output" Height="58"/>
                     </PivotItem>
 
@@ -45,7 +66,7 @@
                     </PivotItem>
                 </Pivot>
                 <StackPanel >
-                    <Button Height="35" x:Name="sandh" Click="sandh_Click"  Margin="0,20,0,0" Style="{StaticResource Hambergutbut}" >
+                    <Button Height="35" x:Name="sandh" Click="sandh_Click" BorderThickness="0,0,0,0" Margin="0,20,0,0" Style="{StaticResource Hambergutbut}" >
                         <Grid  Width="280" >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="249*"/>
@@ -61,16 +82,16 @@
 
                         </Grid>
                     </Button>
-                    
+
                     <StackPanel Visibility="Visible" Margin="0,20,0,0" x:Name="tools" >
                         <TextBox  Style="{StaticResource Coremestyle}" x:Name="convert" TextChanged="convert_TextChanged" PlaceholderText="Characters to ACCI convertion"  Height="35"/>
                         <TextBlock Margin="0,10,0,0" Height="35" Name="acci" />
                     </StackPanel>
                 </StackPanel>
-                
-                
+
+
             </StackPanel>
         </ScrollViewer>
-        
+
     </Grid>
 </Page>

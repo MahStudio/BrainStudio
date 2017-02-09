@@ -148,7 +148,7 @@ namespace UWPBFIDE
             // Dropdown of file types the user can save the file as
             savePicker.FileTypeChoices.Add("Brain Fuck File", new List<string>() { ".bf" });
             // Default file name if the user does not type one in or select a file to replace
-            savePicker.SuggestedFileName = "BrainProject";
+            savePicker.SuggestedFileName = MainF.Current.title.Text;
             Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
             if (file != null)
             {

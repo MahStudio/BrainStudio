@@ -54,7 +54,7 @@
                     <StackPanel >
                         <TextBlock Margin="73,13,0,0" FontSize="17" Text="Brain Studio"  />
                         <StackPanel Margin="20,25,0,0"  Orientation="Vertical" >
-                            <Button  Style="{StaticResource Hambergutbut}" >
+                            <Button Visibility="Collapsed" Style="{StaticResource Hambergutbut}" >
                                 
                                 <StackPanel Width="300" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Orientation="Horizontal">
                                     <TextBlock  Text="" Style="{StaticResource Glypher}"    />
@@ -84,8 +84,8 @@
 
 
                             </Button>
-                            
-                            <Button Margin="0,20,0,0" Style="{StaticResource Hambergutbut}" >
+
+                                <Button  Click="about_Click" Margin="0,20,0,0" Style="{StaticResource Hambergutbut}" >
 
                                 <StackPanel Width="300" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Orientation="Horizontal">
                                     <TextBlock  Text="" Style="{StaticResource Glypher}"    />
@@ -95,7 +95,7 @@
 
 
                             </Button>
-                            <Button x:Name="about" Click="about_Click" Margin="0,20,0,0" Style="{StaticResource Hambergutbut}" >
+                            <Button Visibility="Collapsed" x:Name="about" Margin="0,20,0,0" Style="{StaticResource Hambergutbut}" >
 
                                 <StackPanel Width="300" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Orientation="Horizontal">
                                     <TextBlock  Text="" Style="{StaticResource Glypher}"    />
