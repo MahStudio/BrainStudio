@@ -7,6 +7,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -30,6 +31,11 @@ namespace UWPBFIDE
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+            if (ApplicationData.Current.LocalSettings.Values["Virkey"] == null)
+                ApplicationData.Current.LocalSettings.Values["Virkey"] = false;
+
+
         }
 
         /// <summary>

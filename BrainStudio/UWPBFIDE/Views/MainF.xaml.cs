@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -42,7 +43,17 @@ namespace UWPBFIDE.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            
+            if ((bool)ApplicationData.Current.LocalSettings.Values["Virkey"] == true)
+            {
+                swicher.IsOn = true;
+                VirtualKeyboard.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                swicher.IsOn = false;
+                VirtualKeyboard.Visibility = Visibility.Collapsed;
+            }
+
         }
         public void BrainFuckInterpreter()
         {
@@ -293,6 +304,66 @@ namespace UWPBFIDE.Views
         {
             if (editbox.Text != "")
                 title.Text = editbox.Text;
+        }
+
+        private void swicher_Toggled(object sender, RoutedEventArgs e)
+        {
+            ToggleSwitch toggleSwitch = sender as ToggleSwitch;
+            if (toggleSwitch != null)
+            {
+                if (toggleSwitch.IsOn == true)
+                {
+                    ApplicationData.Current.LocalSettings.Values["Virkey"] = true;
+                    VirtualKeyboard.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    ApplicationData.Current.LocalSettings.Values["Virkey"] = false;
+                    VirtualKeyboard.Visibility = Visibility.Collapsed;
+                }
+            }
+
+
+        }
+
+        private void adder_Click(object sender, RoutedEventArgs e)
+        {
+            textBox.Text += "+";
+        }
+
+        private void miner_Click(object sender, RoutedEventArgs e)
+        {
+            textBox.Text += "-";
+        }
+
+        private void goer_Click(object sender, RoutedEventArgs e)
+        {
+            textBox.Text += ">";
+        }
+
+        private void backer_Click(object sender, RoutedEventArgs e)
+        {
+            textBox.Text += "<";
+        }
+
+        private void doter_Click(object sender, RoutedEventArgs e)
+        {
+            textBox.Text += ".";
+        }
+
+        private void giver_Click(object sender, RoutedEventArgs e)
+        {
+            textBox.Text += ",";
+        }
+
+        private void sloer_Click(object sender, RoutedEventArgs e)
+        {
+            textBox.Text += "[";
+        }
+
+        private void eloer_Click(object sender, RoutedEventArgs e)
+        {
+            textBox.Text += "]";
         }
     }
 }

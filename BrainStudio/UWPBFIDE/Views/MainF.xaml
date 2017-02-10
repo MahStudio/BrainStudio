@@ -23,7 +23,12 @@
         </Storyboard>
     </Page.Resources>
     <Grid Background="Transparent">
-        <ScrollViewer>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer Grid.Row="0" >
             <StackPanel Margin="32" >
                 <Grid  Margin="0,15">
                     <Grid.ColumnDefinitions>
@@ -83,15 +88,40 @@
                         </Grid>
                     </Button>
 
-                    <StackPanel Visibility="Collapsed" Margin="0,20,0,0" x:Name="tools" >
-                        <TextBox  Style="{StaticResource Coremestyle}" x:Name="convert" TextChanged="convert_TextChanged" PlaceholderText="Characters to ACCI convertion"  Height="35"/>
+                    <StackPanel Visibility="Visible" Margin="0,5,0,0" x:Name="tools" >
+                        <Grid Opacity="0.9"  Width="280" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="167*"/>
+                                <ColumnDefinition Width="113*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Opacity="0.8" VerticalAlignment="Bottom"  FontSize="17" Text="Virtual Keyboard" Height="23" Margin="0,0,0,0" />
+                            <ToggleSwitch x:Name="swicher" VerticalAlignment="Center" MinWidth="20" Grid.Column="1" HorizontalAlignment="Center" Toggled="swicher_Toggled" Height="30" Width="90"/>
+
+
+                        </Grid>
+                        <TextBox Margin="0,10,0,0" Style="{StaticResource Coremestyle}" x:Name="convert" TextChanged="convert_TextChanged" PlaceholderText="Characters to ACCI convertion"  Height="35"/>
                         <TextBlock Margin="0,10,0,0" MaxLines="3" TextWrapping="Wrap" Height="90" Name="acci" />
+
                     </StackPanel>
                 </StackPanel>
 
 
             </StackPanel>
         </ScrollViewer>
+        <Grid  x:Name="VirtualKeyboard" Visibility="Collapsed" Height="120" Grid.Row="1" >
+            <GridView SelectionMode="None" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button x:Name="adder" Click="adder_Click" Foreground="White" FontFamily="Segoe MDL2 Assets" Width="70" Height="50" FontSize="25"  Content="" />
+                <Button x:Name="miner" Click="miner_Click" Foreground="White" FontFamily="Segoe MDL2 Assets" Width="70" Height="50" FontSize="25"  Content="" />
+                <Button x:Name="goer" Click="goer_Click" Foreground="White" FontFamily="Segoe MDL2 Assets" Width="70" Height="50" FontSize="25"  Content="" />
+                <Button x:Name="backer" Click="backer_Click" Foreground="White" FontFamily="Segoe MDL2 Assets" Width="70" Height="50" FontSize="25"  Content="" />
+                <Button x:Name="doter" Click="doter_Click" Foreground="White" FontFamily="Segoe UI" Width="70" Height="50" FontSize="30"  Content="." />
+                <Button x:Name="giver" Click="giver_Click" Foreground="White" FontFamily="Segoe UI" Width="70" Height="50" FontSize="30"  Content="," />
+                <Button x:Name="sloer" Click="sloer_Click" Foreground="White" FontFamily="Segoe UI" Width="70" Height="50" FontSize="25"  Content="[" />
+                <Button x:Name="eloer" Click="eloer_Click" Foreground="White" FontFamily="Segoe UI" Width="70" Height="50" FontSize="25"  Content="]" />
+
+
+            </GridView>
+        </Grid>
 
     </Grid>
 </Page>
