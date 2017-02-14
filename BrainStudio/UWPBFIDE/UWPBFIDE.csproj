@@ -126,6 +126,8 @@
     <Content Include="Assets\LockScreenLogo.scale-150.png" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\LockScreenLogo.scale-400.png" />
+    <Content Include="Assets\Logos\brain studio logo dark.png" />
+    <Content Include="Assets\Logos\brain studio logo Light.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-125.png" />
     <Content Include="Assets\SplashScreen.scale-150.png" />
@@ -219,9 +221,7 @@
       <Name>Windows Mobile Extensions for the UWP</Name>
     </SDKReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\Logos\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

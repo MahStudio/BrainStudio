@@ -11,12 +11,12 @@
             <ResourceDictionary.ThemeDictionaries>
                 <ResourceDictionary x:Key="Light">
                     <Style x:Key="WikiSedaIcon" TargetType="Image">
-                        <Setter Property="Source" Value="/Assets/Square150x150Logo.scale-200.png"/>
+                        <Setter Property="Source" Value="/Assets/Logos/brain studio logo dark.png"/>
                     </Style>
                 </ResourceDictionary>
                 <ResourceDictionary x:Key="Dark">
                     <Style x:Key="WikiSedaIcon" TargetType="Image">
-                        <Setter Property="Source" Value="/Assets/Square150x150Logo.scale-200.png"/>
+                        <Setter Property="Source" Value="/Assets/Logos/brain studio logo Light.png"/>
                     </Style>
                 </ResourceDictionary>
             </ResourceDictionary.ThemeDictionaries>
@@ -28,15 +28,15 @@
             <StackPanel>
                 <StackPanel x:Name="LogoGrid">
                     <Grid>
-                        <Image Style="{StaticResource WikiSedaIcon}" Stretch="Uniform" MaxHeight="110"/>
+                        <Image Style="{StaticResource WikiSedaIcon}" Stretch="Uniform" MaxHeight="80"/>
                     </Grid>
                     <Grid x:Name="AppInfo">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        <TextBlock Opacity="0.75" x:Name="ApplicationName" Grid.Row="0" Text="Brain Studio" FontWeight="SemiBold"/>
-                        <TextBlock Opacity="0.75" x:Name="ApplicationVersion" Grid.Row="1" Text="V 10.0.10.323" FontWeight="SemiBold"/>
+                        <TextBlock Margin="20,20,0,0" Opacity="0" x:Name="ApplicationName" Grid.Row="0" Text="Brain Studio" FontWeight="SemiBold"/>
+                        <TextBlock Margin="20,5,0,0" Opacity="0.75" x:Name="ApplicationVersion" Grid.Row="1" Text="V 10.0.10.323" FontWeight="SemiBold"/>
                     </Grid>
                 </StackPanel>
 
@@ -61,17 +61,17 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    
-                    <Button Opacity="0.9" Grid.Column="0" Content="TELEGRAM" FontWeight="Bold" FontSize="15" HorizontalAlignment="Center" Click="TelegramChannel" AutomationProperties.Name="Visit our telegram page" Background="Transparent"/>
-                    <Button Opacity="0.9" Grid.Column="1" Content="INSTAGRAM" FontWeight="Bold" FontSize="15" HorizontalAlignment="Center" Click="InstaPage" AutomationProperties.Name="Visit our Instagram page" Background="Transparent"/>
+
+                    <Button Opacity="0.9" BorderThickness="0,0,0,0" Grid.Column="0" Content="TELEGRAM" FontWeight="Bold" FontSize="15" HorizontalAlignment="Center" Click="TelegramChannel" AutomationProperties.Name="Visit our telegram page" Background="Transparent"/>
+                    <Button Opacity="0.9" BorderThickness="0,0,0,0" Grid.Column="1" Content="INSTAGRAM" FontWeight="Bold" FontSize="15" HorizontalAlignment="Center" Click="InstaPage" AutomationProperties.Name="Visit our Instagram page" Background="Transparent"/>
                 </Grid>
             </StackPanel>
         </ScrollViewer>
         <StackPanel Background="Transparent" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Padding="0,0,0,20">
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                <Button x:Name="share" Click="share_Click" Content="SHARE" FontWeight="SemiBold" Foreground="#00bff3" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" />
-                <Button x:Name="rate" Click="rate_Click" Content="RATE THIS APP" FontWeight="SemiBold" Foreground="#00bff3" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" />
-                <Button x:Name="fback" Click="fback_Click" Content="FEEDBACK" FontWeight="SemiBold" Foreground="#00bff3" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" />
+                <Button x:Name="share" Click="share_Click" Content="SHARE" FontWeight="SemiBold" BorderThickness="0,0,0,0" Opacity="0.75" Foreground="{StaticResource SystemControlBackgroundAccentBrush}" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" />
+                <Button x:Name="rate" Click="rate_Click" Content="RATE THIS APP" FontWeight="SemiBold" BorderThickness="0,0,0,0" Opacity="0.75" Foreground="{StaticResource SystemControlBackgroundAccentBrush}" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" />
+                <Button x:Name="fback" Click="fback_Click" Content="FEEDBACK" FontWeight="SemiBold" BorderThickness="0,0,0,0" Opacity="0.75" Foreground="{StaticResource SystemControlBackgroundAccentBrush}" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" />
 
             </StackPanel>
 

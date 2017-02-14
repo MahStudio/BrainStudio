@@ -313,7 +313,7 @@ namespace UWPBFIDE.Views
         }
         public void cleaner()
         {
-            title.Text = string.Empty;
+            title.Text = "NEW ACTIVITY";
             textBox.Text = string.Empty;
             inp.Text = String.Empty;
             outp.Text = String.Empty;
