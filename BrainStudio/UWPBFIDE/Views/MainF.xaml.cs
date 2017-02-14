@@ -274,9 +274,26 @@ namespace UWPBFIDE.Views
 
         public async void runer()
         {
-            if (Regex.IsMatch(textBox.Text, @"[-+.,><[]]*"))
+            if (Regex.IsMatch(textBox.Text, "[-+.,><[]]*"))
             {
-                Interpret(">" + textBox.Text);
+                string Mytext = textBox.Text.Replace("[","").Replace("]", "").Replace(".", "").Replace(",", "").Replace("<", "").Replace(">", "").Replace("+", "").Replace("-", "").Replace("/n", "");
+                if (string.IsNullOrWhiteSpace(Mytext))
+                {
+                    Interpret(">" + textBox.Text);
+
+                }
+                else
+                {
+                    ContentDialog noWifiDialog = new ContentDialog()
+                    {
+                        Title = "Syntax Error",
+                        Content = "Re correct your code",
+                        PrimaryButtonText = "OK"
+                    };
+                    await noWifiDialog.ShowAsync();
+
+                }
+
             }
             else
             {
