@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
+using System.Text.RegularExpressions;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
@@ -71,94 +72,135 @@ namespace UWPBFIDE.Views
 
         }
 
-       
-        public void Interpret(string s)
+
+        public async void Interpret(string s)
 
         {
-
-            int i = 0;
-
-            int right = s.Length;
-
-            while (i < right)
-
+            try
             {
+                int i = 0;
 
-                switch (s[i])
+                int right = s.Length;
+
+                while (i < right)
 
                 {
 
-                    case '>':
+                    switch (s[i])
 
-                        {
+                    {
 
-                            this.ptr++;
-
-                            if (this.ptr >= BUFSIZE)
+                        case '>':
 
                             {
 
-                                this.ptr = 0;
+                                this.ptr++;
+
+                                if (this.ptr >= BUFSIZE)
+
+                                {
+
+                                    this.ptr = 0;
+
+                                }
+
+                                break;
 
                             }
 
-                            break;
-
-                        }
-
-                    case '<':
-
-                        {
-
-                            this.ptr--;
-
-                            if (this.ptr < 0)
+                        case '<':
 
                             {
 
-                                this.ptr = BUFSIZE - 1;
+                                this.ptr--;
+
+                                if (this.ptr < 0)
+
+                                {
+
+                                    this.ptr = BUFSIZE - 1;
+
+                                }
+
+                                break;
 
                             }
 
-                            break;
+                        case '.':
 
-                        }
+                            {
 
-                    case '.':
+                                outp.Text += ((char)this.buf[this.ptr]);
 
-                        {
+                                break;
 
-                            outp.Text += ((char)this.buf[this.ptr]);
+                            }
 
-                            break;
+                        case '+':
 
-                        }
+                            {
 
-                    case '+':
+                                this.buf[this.ptr]++;
 
-                        {
+                                break;
 
-                            this.buf[this.ptr]++;
+                            }
 
-                            break;
+                        case '-':
 
-                        }
+                            {
 
-                    case '-':
+                                this.buf[this.ptr]--;
 
-                        {
+                                break;
 
-                            this.buf[this.ptr]--;
+                            }
 
-                            break;
+                        case '[':
 
-                        }
+                            {
 
-                    case '[':
+                                if (this.buf[this.ptr] == 0)
 
-                        {
+                                {
 
-                            if (this.buf[this.ptr] == 0)
+                                    int loop = 1;
+
+                                    while (loop > 0)
+
+                                    {
+
+                                        i++;
+
+                                        char c = s[i];
+
+                                        if (c == '[')
+
+                                        {
+
+                                            loop++;
+
+                                        }
+
+                                        else
+
+                                        if (c == ']')
+
+                                        {
+
+                                            loop--;
+
+                                        }
+
+                                    }
+
+                                }
+
+                                break;
+
+                            }
+
+                        case ']':
 
                             {
 
@@ -168,7 +210,7 @@ namespace UWPBFIDE.Views
 
                                 {
 
-                                    i++;
+                                    i--;
 
                                     char c = s[i];
 
@@ -176,7 +218,7 @@ namespace UWPBFIDE.Views
 
                                     {
 
-                                        loop++;
+                                        loop--;
 
                                     }
 
@@ -186,83 +228,70 @@ namespace UWPBFIDE.Views
 
                                     {
 
-                                        loop--;
+                                        loop++;
 
                                     }
 
                                 }
 
+                                i--;
+
+                                break;
+
                             }
 
-                            break;
-
-                        }
-
-                    case ']':
-
-                        {
-
-                            int loop = 1;
-
-                            while (loop > 0)
+                        case ',':
 
                             {
 
-                                i--;
+                                // read a key
 
-                                char c = s[i];
+                                string key = inp.Text;
+                                this.buf[this.ptr] = (int)Convert.ToChar(key);
 
-                                if (c == '[')
-
-                                {
-
-                                    loop--;
-
-                                }
-
-                                else
-
-                                if (c == ']')
-
-                                {
-
-                                    loop++;
-
-                                }
+                                break;
 
                             }
 
-                            i--;
+                    }
 
-                            break;
-
-                        }
-
-                    case ',':
-
-                        {
-
-                            // read a key
-
-                            string key = inp.Text; 
-                            this.buf[this.ptr] = (int)Convert.ToChar(key);
-
-                            break;
-
-                        }
+                    i++;
 
                 }
-
-                i++;
-
+            }
+            catch
+            {
+                ContentDialog noWifiDialog = new ContentDialog()
+                {
+                    Title = "Runtime Error",
+                    Content = "Re correct your code",
+                    PrimaryButtonText = "OK"
+                };
+                await noWifiDialog.ShowAsync();
             }
 
         }
 
-        public  void runer()
+        public async void runer()
         {
-           
-            Interpret(">"+textBox.Text);
+            if (Regex.IsMatch(textBox.Text, @"[-+.,><[]]*"))
+            {
+                Interpret(">" + textBox.Text);
+            }
+            else
+            {
+                ContentDialog noWifiDialog = new ContentDialog()
+                {
+                    Title = "Syntax Error",
+                    Content = "Re correct your code",
+                    PrimaryButtonText = "OK"
+                };
+                await noWifiDialog.ShowAsync();
+
+            }
+
+            
+
 
         }
         public void cleaner()
