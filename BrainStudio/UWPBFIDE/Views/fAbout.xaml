@@ -47,7 +47,7 @@
                         <LineBreak />
                         WHAT IS BRAINFUCK ?
                         <LineBreak />
-                        BrainFuck is a low level programming language that consists of ONLY 8 simple commands. 
+                        BrainFuck is a low level programming language - Created by ‎Urban Müller - that consists of ONLY 8 simple commands. 
                         <LineBreak />
                         BrainFuck is a nice programming language to defrost your brain because it's eay to learn but hard to master !
                         
@@ -75,8 +75,8 @@
 
             </StackPanel>
 
-            <TextBlock FontFamily="Segoe UI Emoji" TextAlignment="Center" Text="DEVELOPED WITH ❤️ BY MAH STUDIO" FontWeight="SemiBold"/>
-            <!--<TextBlock TextAlignment="Center" Text="CopyRight 2016 Wikiseda"/>-->
+            <TextBlock FontFamily="Segoe UI Emoji" TextAlignment="Center" Text="DEVELOPED WITH ❤️ IN MAH STUDIO" FontWeight="SemiBold"/>
+            <TextBlock FontSize="13" TextAlignment="Center" Text="By @Mohsens22. Special thanks to MAH insiders;"/>
         </StackPanel>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="WindowStates">

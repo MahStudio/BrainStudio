@@ -52,7 +52,7 @@
                     </Button>
                 </Grid>
 
-                <TextBox x:FieldModifier="public" x:Name="textBox"  PlaceholderText="Code here"  Height="300" Style="{StaticResource Coremestyle}"/>
+                <TextBox FontSize="25" x:FieldModifier="public"  x:Name="textBox"  PlaceholderText="Code here"  Height="300" Style="{StaticResource Coremestyle}"/>
 
                 <Pivot>
 
@@ -88,7 +88,7 @@
                         </Grid>
                     </Button>
 
-                    <StackPanel Visibility="Visible" Margin="0,5,0,0" x:Name="tools" >
+                    <StackPanel Visibility="Collapsed" Margin="0,5,0,0" x:Name="tools" >
                         <Grid Opacity="0.9"  Width="280" >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="167*"/>

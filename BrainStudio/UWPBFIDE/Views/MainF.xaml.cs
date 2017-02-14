@@ -261,6 +261,7 @@ namespace UWPBFIDE.Views
 
         public  void runer()
         {
+           
             Interpret(">"+textBox.Text);
 
         }
