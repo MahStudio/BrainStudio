@@ -42,14 +42,14 @@
 
                 <StackPanel x:Name="AboutTextGrid" RelativePanel.Below="LogoGrid" RelativePanel.AlignHorizontalCenterWithPanel="True">
                     <TextBlock Opacity="0.75" x:Uid="PageAboutLongText" TextWrapping="Wrap" TextAlignment="Center" Padding="15">
-                        Brain Studio is an Integraded Development Environment for the BrainFuck programming langulage in Windows Universal Platform.
+                        Brain Studio is an Integrated Development Environment for the BrainFuck programming language in Windows Universal Platform.
                         <LineBreak />
                         <LineBreak />
                         WHAT IS BRAINFUCK ?
                         <LineBreak />
                         BrainFuck is a low level programming language - Created by ‎Urban Müller - that consists of ONLY 8 simple commands. 
                         <LineBreak />
-                        BrainFuck is a nice programming language to defrost your brain because it's eay to learn but hard to master !
+                        BrainFuck is a nice programming language to defrost your brain because it's easy to learn but hard to master !
                         
                     </TextBlock>
                     <TextBlock Opacity="0.75" x:Uid="PageAboutWikiTalki" TextAlignment="Center" Text="EVERYONE CAN LEARN BRAINFUCK IN A DAY!" Padding="15"/>
