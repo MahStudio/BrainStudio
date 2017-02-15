@@ -76,7 +76,7 @@
             </StackPanel>
 
             <TextBlock FontFamily="Segoe UI Emoji" TextAlignment="Center" Text="DEVELOPED WITH ❤️ IN MAH STUDIO" FontWeight="SemiBold"/>
-            <TextBlock FontSize="13" TextAlignment="Center" Text="By @Mohsens22. Special thanks to MAH insiders;"/>
+            <TextBlock Visibility="Collapsed" FontSize="13" TextAlignment="Center" Text="By @Mohsens22. Special thanks to MAH insiders;"/>
         </StackPanel>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="WindowStates">
