@@ -24,7 +24,7 @@
     </Page.Resources>
 
     <RelativePanel Background="Transparent">
-        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
             <StackPanel>
                 <StackPanel x:Name="LogoGrid">
                     <Grid>

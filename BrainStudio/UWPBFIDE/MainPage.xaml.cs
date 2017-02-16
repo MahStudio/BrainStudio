@@ -141,6 +141,7 @@ namespace UWPBFIDE
         private void about_Click(object sender, RoutedEventArgs e)
         {
             frameme.Navigate(typeof(fAbout));
+            if(RootSplitView.IsPaneOpen&&RootSplitView.DisplayMode==SplitViewDisplayMode.Overlay)
             RootSplitView.IsPaneOpen = !RootSplitView.IsPaneOpen;
         }
 
