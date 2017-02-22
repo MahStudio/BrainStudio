@@ -99,7 +99,7 @@
 
 
                         </Grid>
-                        <TextBox Margin="0,10,0,0" Style="{StaticResource Coremestyle}" x:Name="convert" TextChanged="convert_TextChanged" PlaceholderText="Characters to ACCI convertion"  Height="35"/>
+                        <TextBox Margin="0,10,0,0" Style="{StaticResource Coremestyle}" x:Name="convert" TextChanged="convert_TextChanged" PlaceholderText="Characters to ASCII convertion"  Height="35"/>
                         <TextBlock Margin="0,10,0,0" MaxLines="3" TextWrapping="Wrap" Height="90" Name="acci" />
 
                     </StackPanel>

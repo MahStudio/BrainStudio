@@ -107,6 +107,9 @@
     <Compile Include="Views\fAbout.xaml.cs">
       <DependentUpon>fAbout.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Learn.xaml.cs">
+      <DependentUpon>Learn.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainF.xaml.cs">
       <DependentUpon>MainF.xaml</DependentUpon>
     </Compile>
@@ -199,6 +202,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
     <Page Include="Views\fAbout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Learn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

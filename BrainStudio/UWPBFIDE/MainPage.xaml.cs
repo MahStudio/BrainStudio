@@ -220,6 +220,13 @@ namespace UWPBFIDE
 
             }
         }
+
+        private void Learn_Click(object sender, RoutedEventArgs e)
+        {
+            frameme.Navigate(typeof(Learn));
+            if (RootSplitView.IsPaneOpen && RootSplitView.DisplayMode == SplitViewDisplayMode.Overlay)
+                RootSplitView.IsPaneOpen = !RootSplitView.IsPaneOpen;
+        }
     }
 
 }

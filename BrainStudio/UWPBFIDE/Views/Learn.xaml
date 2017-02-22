@@ -1,0 +1,57 @@
+﻿<Page
+    x:Class="UWPBFIDE.Views.Learn"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWPBFIDE.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Transparent">
+        <ScrollViewer>
+        <StackPanel>
+            <TextBlock Margin="10,10,0,0" FontSize="20" Text=" Learn BrainFuck in some minutes!" />
+                <TextBlock TextWrapping="Wrap" Margin="10">
+                    <Run Text="The language consists of only eight simple commands and an instruction pointer. With the operator &gt; you switch the instruction pointer to next section of memory and with the operator &lt; you switch back to previous section of memory. "/>
+                    <LineBreak/>
+                    <Run Text=" In this programming language you just have a couple of math operators. + adds one unit to the current section of memory and - deletes one unit from current section of memory. "/>
+                    <LineBreak/>
+                    <Run Text=" And . converts the value of current section to an ASCII character and prints that out. "/>
+                    <LineBreak/>
+                    <Run Text=" Let's code our first example. If you want to print out &quot;A&quot; first you should find the ASCII value (There's an ASCII converter tool available in common tools) which equals to 65. Then we should add 65 units to current memory section, and print that out. This is the code: "/>
+                    <LineBreak/>
+                    <Run Text=" +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ . "/>
+                    <LineBreak/>
+                    <Run Text="The operator , gets an input parameter and converts it to ASCII then assigns it to current memory section."/>
+                    <LineBreak/>
+                    <Run Text=" And let's get to know the brackets. BrainFuck runs the code inside [ ] when the current section of memory is not equal to zero ; YEAH ! You are right! We can create loops and if conditions! Let's get to know it in code; Print &quot;A&quot; : "/>
+                    <LineBreak/>
+                    <Run Text=" ++++++++++ "/>
+                    <LineBreak/>
+                    <Run Text=" [ "/>
+                    <LineBreak/>
+                    <Run Text=" &gt; "/>
+                    <LineBreak/>
+                    <Run Text=" ++++++ "/>
+                    <LineBreak/>
+                    <Run Text=" &lt; "/>
+                    <LineBreak/>
+                    <Run Text=" - "/>
+                    <LineBreak/>
+                    <Run Text=" ] "/>
+                    <LineBreak/>
+                    <Run Text=" &gt; "/>
+                    <LineBreak/>
+                    <Run Text=" +++++ "/>
+                    <LineBreak/>
+                    <Run Text=" . "/>
+                    <LineBreak/>
+                    <Run Text=" Detail: The first line adds 10 units to first section (usage: we want to run our loop 10 times); The second line, initializes the condition (if the current section is not 0, the code inside will be ran) The third line, moves the memory pointer to the next section. The fourth line adds 6 units to current section Next line gets the pointer back to previous section. Next line deletes one unit from current section. Next line is the end of condition. BrainFuck will run the code inside bricked unless the current section reaches to zero. Next line, would move the memory pointer to the next section. Next line would add 5 units to the current section. And the last lines prints out the value."/>
+                </TextBlock>
+                <HyperlinkButton Content="Ask your questions here" HorizontalAlignment="Center" Margin="0,20,0,0" Click="HyperlinkButton_Click" />
+
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</Page>
