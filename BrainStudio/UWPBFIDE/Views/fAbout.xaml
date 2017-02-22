@@ -42,17 +42,17 @@
 
                 <StackPanel x:Name="AboutTextGrid" RelativePanel.Below="LogoGrid" RelativePanel.AlignHorizontalCenterWithPanel="True">
                     <TextBlock Opacity="0.75" x:Uid="PageAboutLongText" TextWrapping="Wrap" TextAlignment="Center" Padding="15">
-                        Brain Studio is an Integrated Development Environment for the BrainFuck programming language in Windows Universal Platform.
+                        Brain Studio is an Integrated Development Environment for the  BrianPh .#k programming language in Windows Universal Platform.
                         <LineBreak />
                         <LineBreak />
-                        WHAT IS BRAINFUCK ?
+                        WHAT IS  BrianPh .#k ?
                         <LineBreak />
-                        BrainFuck is a low level programming language - Created by ‎Urban Müller - that consists of ONLY 8 simple commands. 
+                         BrianPh .#k is a low level programming language - Created by ‎Urban Müller - that consists of ONLY 8 simple commands. 
                         <LineBreak />
-                        BrainFuck is a nice programming language to defrost your brain because it's easy to learn but hard to master !
+                         BrianPh .#k is a nice programming language to defrost your brain because it's easy to learn but hard to master !
                         
                     </TextBlock>
-                    <TextBlock Opacity="0.75" x:Uid="PageAboutWikiTalki" TextAlignment="Center" Text="EVERYONE CAN LEARN BRAINFUCK IN A DAY!" Padding="15"/>
+                    <TextBlock Opacity="0.75" x:Uid="PageAboutWikiTalki" TextAlignment="Center" Text="EVERYONE CAN LEARN  BrianPh .#k IN A DAY!" Padding="15"/>
                 </StackPanel>
 
                 <Grid RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Height="45" VerticalAlignment="Top" Margin="0,20,0,0">
