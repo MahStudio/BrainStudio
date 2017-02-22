@@ -42,14 +42,14 @@
 
                 <StackPanel x:Name="AboutTextGrid" RelativePanel.Below="LogoGrid" RelativePanel.AlignHorizontalCenterWithPanel="True">
                     <TextBlock Opacity="0.75" x:Uid="PageAboutLongText" TextWrapping="Wrap" TextAlignment="Center" Padding="15">
-                        Brain Studio is an Integrated Development Environment for the  BrianPh .#k programming language in Windows Universal Platform.
+                        Brain Studio is an Integrated Development Environment for the  BrainPh .#k programming language in Windows Universal Platform.
                         <LineBreak />
                         <LineBreak />
                         WHAT IS  BrianPh .#k ?
                         <LineBreak />
-                         BrianPh .#k is a low level programming language - Created by ‎Urban Müller - that consists of ONLY 8 simple commands. 
+                         BrainPh .#k is a low level programming language - Created by ‎Urban Müller - that consists of ONLY 8 simple commands. 
                         <LineBreak />
-                         BrianPh .#k is a nice programming language to defrost your brain because it's easy to learn but hard to master !
+                        BrainPh .#k is a nice programming language to defrost your brain because it's easy to learn but hard to master !
                         
                     </TextBlock>
                     <TextBlock Opacity="0.75" x:Uid="PageAboutWikiTalki" TextAlignment="Center" Text="EVERYONE CAN LEARN  BrianPh .#k IN A DAY!" Padding="15"/>
