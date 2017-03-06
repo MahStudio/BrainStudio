@@ -5,7 +5,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-using BFIDE;
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
 
 namespace BFIDE
 {
@@ -25,6 +27,8 @@ namespace BFIDE
         private bool echo { get; set; }
         protected override void OnCreate(Bundle bundle)
         {
+            MobileCenter.Start("3e4249fb-a7c0-4ab9-8dcd-ff5b872120c6",
+                    typeof(Analytics), typeof(Crashes));
             base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
