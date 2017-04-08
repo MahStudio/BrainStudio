@@ -132,6 +132,7 @@
     <Content Include="Assets\Logos\brain studio logo dark.png" />
     <Content Include="Assets\Logos\brain studio logo Light.png" />
     <Content Include="Assets\Noise.jpg" />
+    <Content Include="Assets\Noise.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-125.png" />
     <Content Include="Assets\SplashScreen.scale-150.png" />
