@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SamplesCommon;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,6 +18,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Hosting;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
@@ -35,6 +37,7 @@ namespace UWPBFIDE
         public MainPage()
         {
             this.InitializeComponent();
+            ImageLoader.Initialize(ElementCompositionPreview.GetElementVisual(this).Compositor);
             Loaded += MainPage_Loaded;
             Current = this;
         }

@@ -12,7 +12,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.15063.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -131,6 +131,7 @@
     <Content Include="Assets\LockScreenLogo.scale-400.png" />
     <Content Include="Assets\Logos\brain studio logo dark.png" />
     <Content Include="Assets\Logos\brain studio logo Light.png" />
+    <Content Include="Assets\Noise.jpg" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-125.png" />
     <Content Include="Assets\SplashScreen.scale-150.png" />
@@ -215,12 +216,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XamlBrewer.Uwp.BackDrop\XamlBrewer.Uwp.BackDrop.csproj">
-      <Project>{c4f5fecd-a48d-408a-a5d0-548d283d4257}</Project>
-      <Name>XamlBrewer.Uwp.BackDrop</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <SDKReference Include="Microsoft.Services.Store.Engagement, Version=10.0">
       <Name>Microsoft Engagement Framework</Name>
     </SDKReference>
@@ -231,7 +226,16 @@
       <Name>Windows Mobile Extensions for the UWP</Name>
     </SDKReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SamplesCommon\SamplesCommon\SamplesCommon.csproj">
+      <Project>{0b6a4830-d1ff-4018-baa2-7257eb4579fe}</Project>
+      <Name>SamplesCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SamplesNative\SamplesNative.vcxproj">
+      <Project>{b0dca768-5521-406c-803d-fdccf67181d1}</Project>
+      <Name>SamplesNative</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:UWPBFIDE"
-    xmlns:controls="using:XamlBrewer.Uwp.Controls"
+    xmlns:controls="using:SamplesCommon"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -50,8 +50,7 @@
                 <Grid>
                     
                     <Grid Background="{StaticResource SystemControlBackgroundAccentBrush}" Opacity="0.05" />
-                    <controls:BackDrop IsEnabled="False" x:Name="Pashmz"  BlurAmount="33" />
-                        <controls:BackDropHost IsEnabled="False" x:Name="Pashmzi"  BlurAmount="33" />
+                        <controls:BackDrop x:Name="Pashmz" BlurAmount="33" />
                         <StackPanel >
                         <TextBlock Margin="73,13,0,0" FontSize="17" Text="Brain Studio"  />
                         <StackPanel Margin="20,25,0,0"  Orientation="Vertical" >
@@ -141,8 +140,6 @@
                     <VisualState.Setters>
                         <Setter Target="RootSplitView.DisplayMode" Value="Inline"/>
                         <Setter Target="RootSplitView.IsPaneOpen" Value="true"/>
-                        <Setter Target="Pashmz.IsEnabled" Value="False" />
-                        <Setter Target="Pashmzi.IsEnabled" Value="True" />
 
 
                     </VisualState.Setters>
@@ -153,8 +150,7 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="RootSplitView.DisplayMode" Value="Overlay"/>
-                        <Setter Target="Pashmz.IsEnabled" Value="True" />
-                        <Setter Target="Pashmzi.IsEnabled" Value="False" />
+                      
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
