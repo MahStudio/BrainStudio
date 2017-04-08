@@ -11,7 +11,7 @@ namespace XamlBrewer.Uwp.Controls
     /// A lightweight control to add blur and tint effect.
     /// </summary>
     /// <seealso cref="Windows.UI.Xaml.Controls.Control" />
-    public class BackDrop : Control
+    public class BackDropHost : Control
     {
         private readonly Compositor _compositor;
         private readonly SpriteVisual _blurVisual;
@@ -24,7 +24,7 @@ namespace XamlBrewer.Uwp.Controls
             DependencyProperty.Register(
                 nameof(BlurAmount),
                 typeof(double),
-                typeof(BackDrop),
+                typeof(BackDropHost),
                 new PropertyMetadata(10d, OnBlurAmountChanged));
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace XamlBrewer.Uwp.Controls
             DependencyProperty.Register(
                 nameof(TintColor),
                 typeof(Color),
-                typeof(BackDrop),
+                typeof(BackDropHost),
                 new PropertyMetadata(Colors.Transparent, OnTintColorChanged));
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace XamlBrewer.Uwp.Controls
             DependencyProperty.Register(
                 nameof(TintAlpha),
                 typeof(int),
-                typeof(BackDrop),
+                typeof(BackDropHost),
                 new PropertyMetadata(90, OnTintAlphaChanged));
 
         /// <summary>
@@ -54,22 +54,27 @@ namespace XamlBrewer.Uwp.Controls
             DependencyProperty.Register(
                 nameof(SaturationIntensity),
                 typeof(double),
-                typeof(BackDrop),
+                typeof(BackDropHost),
                 new PropertyMetadata(1.75, OnSaturationIntensityChanged));
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BackDrop"/> class.
+        /// Initializes a new instance of the <see cref="BackDropHost"/> class.
         /// </summary>
-        public BackDrop()
+        public BackDropHost()
         {
             var rootVisual = ElementCompositionPreview.GetElementVisual(this);
             _compositor = rootVisual.Compositor;
             _blurVisual = _compositor.CreateSpriteVisual();
 
             var brush = BuildBlurBrush();
-            
+            try
+            {
+                brush.SetSourceParameter("Source", _compositor.CreateHostBackdropBrush());
+            }
+            catch
+            {
                 brush.SetSourceParameter("Source", _compositor.CreateBackdropBrush());
-            
+            }
            
             _blurBrush = brush;
             _blurVisual.Brush = _blurBrush;
@@ -124,7 +129,7 @@ namespace XamlBrewer.Uwp.Controls
 
         private static void OnBlurAmountChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var backDrop = d as BackDrop;
+            var backDrop = d as BackDropHost;
 
             if (backDrop == null) return;
 
@@ -133,7 +138,7 @@ namespace XamlBrewer.Uwp.Controls
 
         private static void OnTintColorChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var backDrop = d as BackDrop;
+            var backDrop = d as BackDropHost;
 
             if (backDrop == null) return;
 
@@ -145,7 +150,7 @@ namespace XamlBrewer.Uwp.Controls
 
         private static void OnTintAlphaChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var backDrop = d as BackDrop;
+            var backDrop = d as BackDropHost;
 
             if (backDrop == null) return;
 
@@ -157,7 +162,7 @@ namespace XamlBrewer.Uwp.Controls
 
         private static void OnSaturationIntensityChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var backDrop = d as BackDrop;
+            var backDrop = d as BackDropHost;
 
             if (backDrop == null) return;
 

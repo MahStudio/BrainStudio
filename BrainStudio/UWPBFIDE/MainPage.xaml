@@ -50,8 +50,9 @@
                 <Grid>
                     
                     <Grid Background="{StaticResource SystemControlBackgroundAccentBrush}" Opacity="0.05" />
-                    <controls:BackDrop x:Name="Pashmz"  BlurAmount="11" />
-                    <StackPanel >
+                    <controls:BackDrop IsEnabled="False" x:Name="Pashmz"  BlurAmount="33" />
+                        <controls:BackDropHost IsEnabled="False" x:Name="Pashmzi"  BlurAmount="33" />
+                        <StackPanel >
                         <TextBlock Margin="73,13,0,0" FontSize="17" Text="Brain Studio"  />
                         <StackPanel Margin="20,25,0,0"  Orientation="Vertical" >
                             <Button Visibility="Collapsed" Style="{StaticResource Hambergutbut}" >
@@ -140,6 +141,10 @@
                     <VisualState.Setters>
                         <Setter Target="RootSplitView.DisplayMode" Value="Inline"/>
                         <Setter Target="RootSplitView.IsPaneOpen" Value="true"/>
+                        <Setter Target="Pashmz.IsEnabled" Value="False" />
+                        <Setter Target="Pashmzi.IsEnabled" Value="True" />
+
+
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState>
@@ -148,6 +153,8 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="RootSplitView.DisplayMode" Value="Overlay"/>
+                        <Setter Target="Pashmz.IsEnabled" Value="True" />
+                        <Setter Target="Pashmzi.IsEnabled" Value="False" />
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
