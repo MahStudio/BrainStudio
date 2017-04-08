@@ -24,7 +24,7 @@ using Microsoft.Graphics.Canvas.Effects;
 
 namespace SamplesCommon
 {
-    public class BackDrop : Control
+    public class HostBackDrop : Control
     {
         Compositor m_compositor;
         SpriteVisual m_blurVisual;
@@ -36,7 +36,7 @@ namespace SamplesCommon
         ManagedSurface m_noiseSurface;
 #endif
 
-        public BackDrop()
+        public HostBackDrop()
         {
             m_rootVisual = ElementCompositionPreview.GetElementVisual(this as UIElement);
             Compositor = m_rootVisual.Compositor;
@@ -45,7 +45,7 @@ namespace SamplesCommon
 
 #if SDKVERSION_14393
             CompositionEffectBrush brush = BuildBlurBrush();
-            brush.SetSourceParameter("source", m_compositor.CreateBackdropBrush());
+            brush.SetSourceParameter("source", m_compositor.CreateHostBackdropBrush());
             m_blurBrush = brush;
             m_blurVisual.Brush = m_blurBrush;
 

@@ -111,6 +111,7 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HostBackDrop .cs" />
     <Compile Include="BackDrop.cs" />
     <Compile Include="ColorMixer.xaml.cs">
       <DependentUpon>ColorMixer.xaml</DependentUpon>
