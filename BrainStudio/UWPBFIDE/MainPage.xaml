@@ -49,8 +49,8 @@
             <SplitView.Pane>
                 <Grid>
                     
-                    <Grid Background="{StaticResource SystemControlBackgroundAccentBrush}" Opacity="0.05" />
-                        <controls:HostBackDrop x:Name="Pashmz" BlurAmount="33" />
+                    <Grid Background="{StaticResource SystemControlBackgroundAccentBrush}" Opacity="0.09" />
+                        <controls:HostBackDrop  x:Name="Pashmz" BlurAmount="53" />
                         <StackPanel >
                         <TextBlock Margin="73,13,0,0" FontSize="17" Text="Brain Studio"  />
                         <StackPanel Margin="20,25,0,0"  Orientation="Vertical" >

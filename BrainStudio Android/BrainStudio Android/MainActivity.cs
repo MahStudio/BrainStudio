@@ -7,6 +7,7 @@ namespace BrainStudio_Android
     [Activity(Label = "BrainStudio_Android", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
+        //newproj
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);

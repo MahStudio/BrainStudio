@@ -49,10 +49,10 @@ namespace SamplesCommon
             m_blurBrush = brush;
             m_blurVisual.Brush = m_blurBrush;
 
-            BlurAmount = 9;
-            TintColor = Colors.Transparent;
+           // BlurAmount = 9;
+           // TintColor = Colors.Transparent;
 #else
-            m_blurBrush = Compositor.CreateColorBrush(Colors.White);
+            m_blurBrush = Compositor.CreateColorBrush(Colors.Transparent);
             m_blurVisual.Brush = m_blurBrush;
 #endif
             ElementCompositionPreview.SetElementChildVisual(this as UIElement, m_blurVisual);
@@ -62,7 +62,7 @@ namespace SamplesCommon
         }
 
         public const string BlurAmountProperty = nameof(BlurAmount);
-        public const string TintColorProperty = nameof(TintColor);
+      
 
         public double BlurAmount
         {
@@ -86,31 +86,7 @@ namespace SamplesCommon
             }
         }
 
-        public Color TintColor
-        {
-            get
-            {
-                Color value;
-#if SDKVERSION_14393
-                m_rootVisual.Properties.TryGetColor("TintColor", out value);
-#else
-                value = ((CompositionColorBrush)m_blurBrush).Color;
-#endif
-                return value;
-            }
-            set
-            {
-#if SDKVERSION_14393
-                if (!m_setUpExpressions)
-                {
-                    m_blurBrush.Properties.InsertColor("Color.Color", value);
-                }
-                m_rootVisual.Properties.InsertColor(TintColorProperty, value);
-#else
-                ((CompositionColorBrush)m_blurBrush).Color = value;
-#endif
-            }
-        }
+       
 
         public Compositor Compositor
         {
@@ -163,7 +139,7 @@ namespace SamplesCommon
 
             m_blurBrush.Properties.StartAnimation("Blur.BlurAmount", exprAnimation);
 
-            exprAnimation.Expression = $"sourceProperties.{TintColorProperty}";
+          //  exprAnimation.Expression = $"sourceProperties.{TintColorProperty}";
 
             m_blurBrush.Properties.StartAnimation("Color.Color", exprAnimation);
         }
