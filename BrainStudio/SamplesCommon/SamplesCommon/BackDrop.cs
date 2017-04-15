@@ -45,12 +45,11 @@ namespace SamplesCommon
 
 #if SDKVERSION_14393
             CompositionEffectBrush brush = BuildBlurBrush();
+            
             brush.SetSourceParameter("source", m_compositor.CreateBackdropBrush());
             m_blurBrush = brush;
             m_blurVisual.Brush = m_blurBrush;
-
-            BlurAmount = 9;
-            TintColor = Colors.Transparent;
+            
 #else
             m_blurBrush = Compositor.CreateColorBrush(Colors.White);
             m_blurVisual.Brush = m_blurBrush;

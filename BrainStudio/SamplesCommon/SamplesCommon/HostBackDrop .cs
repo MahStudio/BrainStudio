@@ -45,7 +45,16 @@ namespace SamplesCommon
 
 #if SDKVERSION_14393
             CompositionEffectBrush brush = BuildBlurBrush();
-            brush.SetSourceParameter("source", m_compositor.CreateHostBackdropBrush());
+            try
+            {
+                brush.SetSourceParameter("source", m_compositor.CreateHostBackdropBrush());
+
+            }
+            catch
+            {
+                brush.SetSourceParameter("source", m_compositor.CreateBackdropBrush());
+
+            }
             m_blurBrush = brush;
             m_blurVisual.Brush = m_blurBrush;
 

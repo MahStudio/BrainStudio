@@ -51,6 +51,7 @@
                     
                     <Grid Background="{StaticResource SystemControlBackgroundAccentBrush}" Opacity="0.09" />
                         <controls:HostBackDrop x:Name="Pashmz" BlurAmount="53" />
+                        <controls:BackDrop x:Name="Koonz" BlurAmount="23" />
                         <StackPanel >
                         <TextBlock Margin="73,13,0,0" FontSize="17" Text="Brain Studio"  />
                         <StackPanel Margin="20,25,0,0"  Orientation="Vertical" >
@@ -140,8 +141,8 @@
                     <VisualState.Setters>
                         <Setter Target="RootSplitView.DisplayMode" Value="Inline"/>
                         <Setter Target="RootSplitView.IsPaneOpen" Value="true"/>
-                        <!--<Setter Target="Pashmz.IsEnabled" Value="False" />-->
-
+                        <Setter Target="Pashmz.Visibility" Value="Visible" />
+                        <Setter Target="Koonz.Visibility" Value="Collapsed" />
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState>
@@ -150,7 +151,10 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="RootSplitView.DisplayMode" Value="Overlay"/>
-                      
+                        
+                        <Setter Target="Pashmz.Visibility" Value="Collapsed" />
+                        <Setter Target="Koonz.Visibility" Value="Visible" />
+
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
