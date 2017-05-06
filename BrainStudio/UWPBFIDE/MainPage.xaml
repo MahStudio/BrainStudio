@@ -13,7 +13,9 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid  Grid.RowSpan="2" Background="{StaticResource SystemControlBackgroundAccentBrush}" Opacity="0.02" />
+        <controls:HostBackDrop Grid.RowSpan="2" x:Name="Pashmz1" BlurAmount="60" />
+        <controls:BackDrop Grid.RowSpan="2" x:Name="Koonz1" BlurAmount="20" />
+        <Grid  Grid.RowSpan="2" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.6" />
         <Grid Grid.Row="0"
               x:Name="TitleBar">
             <Grid.ColumnDefinitions>
@@ -49,9 +51,11 @@
             <SplitView.Pane>
                 <Grid>
                     
-                    <Grid Background="{StaticResource SystemControlBackgroundAccentBrush}" Opacity="0.09" />
-                        <controls:HostBackDrop x:Name="Pashmz" BlurAmount="53" />
-                        <controls:BackDrop x:Name="Koonz" BlurAmount="23" />
+                        <controls:HostBackDrop x:Name="Pashmz" BlurAmount="40" />
+                        <controls:BackDrop x:Name="Koonz" BlurAmount="20" />
+                        <Grid  Grid.RowSpan="2" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.4" />
+                        
+
                         <StackPanel >
                         <TextBlock Margin="73,13,0,0" FontSize="17" Text="Brain Studio"  />
                         <StackPanel Margin="20,25,0,0"  Orientation="Vertical" >
