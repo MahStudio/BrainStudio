@@ -1,5 +1,5 @@
 # BrainStudio
-A code editor for Brainfuck programming language in UWP featuring fluent design
+A code editor for Brainfuck programming language in UWP featuring fluent design. [Get it from Microsoft Store](https://www.microsoft.com/en-us/store/p/brain-studio/9nk2p1vzmq23#)
 
 ![image](https://user-images.githubusercontent.com/22152065/38917828-1ff4fe6e-4301-11e8-8d02-cadfc201948a.png)
 
